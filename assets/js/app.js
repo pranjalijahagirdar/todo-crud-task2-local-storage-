@@ -70,6 +70,12 @@ function addtodo(eve){
                             </div>`
 
     todoList.append(li)
+
+    Swal .fire({
+        title:'Data added successfully !!!',
+        icon:'success',
+        timer:3000
+    });
 }
 
 //delete 
@@ -83,6 +89,12 @@ function deletetodo(ele){
         localStorage.setItem('todoArr', JSON.stringify(todoArr))
         ele.closest('li').remove()
     }
+
+    Swal .fire({
+        title:'Data deleted successfully !!!',
+        icon:'success',
+        timer:3000
+    });
 }
 
 //edit 
@@ -113,6 +125,12 @@ function updatetodo(){
     todoForm.reset()
     addbtn.classList.remove('d-none')
     updatebtn.classList.add('d-none')
+
+    Swal .fire({
+        title:'Data updated successfully !!!',
+        icon:'success',
+        timer:3000
+    });
 }
 
 todoForm.addEventListener("submit", addtodo)
