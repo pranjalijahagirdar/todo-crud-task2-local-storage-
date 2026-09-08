@@ -30,11 +30,11 @@ const updatebtn = document.getElementById("updatebtn")
 // ];
 
 // localStorage.setItem("todoArr", JSON.stringify(todoArr))
-let todoArr = JSON.parse(localStorage.getItem('todoArr'));
+let todoArr = JSON.parse(localStorage.getItem('todoArr'))||[]
 //read
 
 function oncreatetodoList(arr){
-    let result = "";
+    let result =``;
     arr.forEach((ele)=>{
         result +=`<li class="list-group-item d-flex justify-content-between align-items-center bg-danger" id=${ele.todoId}>
                             <strong>${ele.todoItem}</strong>
@@ -57,8 +57,8 @@ function addtodo(eve){
         todoId:Date.now().toString()
      }
      todoArr.push(todoObj)
-     todoForm.reset()
      localStorage.setItem("todoArr", JSON.stringify(todoArr))
+     todoForm.reset()
     //  cl(todoObj.todoItem)
      let li = document.createElement('li')
      li.className = 'list-group-item d-flex justify-content-between align-items-center bg-primary'
