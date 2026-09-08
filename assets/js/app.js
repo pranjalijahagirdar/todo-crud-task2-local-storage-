@@ -36,11 +36,11 @@ let todoArr = JSON.parse(localStorage.getItem('todoArr'))||[]
 function oncreatetodoList(arr){
     let result =``;
     arr.forEach((ele)=>{
-        result +=`<li class="list-group-item d-flex justify-content-between align-items-center bg-danger" id=${ele.todoId}>
+        result +=`<li class="list-group-item d-flex justify-content-between align-items-center bg-info" id=${ele.todoId}>
                             <strong>${ele.todoItem}</strong>
                             <div>
-                                <i onClick="edittodo(this)" class="fa-solid fa-pen-to-square fa-2x text-info"></i>
-                                <i onClick="deletetodo(this)" class="fa-solid fa-trash fa-2x text-success"></i>
+                                <i onClick="edittodo(this)" class="fa-solid fa-pen-to-square fa-2x text-primary"></i>
+                                <i onClick="deletetodo(this)" class="fa-solid fa-trash fa-2x text-danger"></i>
                             </div>
                         </li>`
     })
@@ -61,12 +61,12 @@ function addtodo(eve){
      todoForm.reset()
     //  cl(todoObj.todoItem)
      let li = document.createElement('li')
-     li.className = 'list-group-item d-flex justify-content-between align-items-center bg-primary'
+     li.className = 'list-group-item d-flex justify-content-between align-items-center bg-info'
      li.id = todoObj.todoId
      li.innerHTML = `<strong>${todoObj.todoItem}</strong>
                             <div>
-                                <i onClick="edittodo(this)" class="fa-solid fa-pen-to-square fa-2x text-info"></i>
-                                <i onClick="deletetodo(this)" class="fa-solid fa-trash fa-2x text-success"></i>
+                                <i onClick="edittodo(this)" class="fa-solid fa-pen-to-square fa-2x text-primary"></i>
+                                <i onClick="deletetodo(this)" class="fa-solid fa-trash fa-2x text-danger"></i>
                             </div>`
 
     todoList.append(li)
