@@ -61,7 +61,7 @@ function addtodo(eve){
      localStorage.setItem("todoArr", JSON.stringify(todoArr))
     //  cl(todoObj.todoItem)
      let li = document.createElement('li')
-     li.className = 'list-group-item d-flex justify-content-between align-items-center bg-danger'
+     li.className = 'list-group-item d-flex justify-content-between align-items-center bg-primary'
      li.id = todoObj.todoId
      li.innerHTML = `<strong>${todoObj.todoItem}</strong>
                             <div>
